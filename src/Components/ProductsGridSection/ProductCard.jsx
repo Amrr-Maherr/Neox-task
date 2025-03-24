@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
     <div className="bg-white p-4 flex flex-col mb-2 card group hover:shadow-xl">
       <div className="mb-2">
         <h3 className="text-sm text-gray-600 my-3">{product.category}</h3>
-        <h2 className="text-blue-500 font-semibold">{product.name}</h2>
+        <h2 className="text-blue-500 font-semibold">{product.name.slice(0,10)}</h2>
       </div>
       <div className="flex-grow flex items-center justify-center">
         <img
