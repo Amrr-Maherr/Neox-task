@@ -48,7 +48,7 @@ const RecentlyAdded = () => {
           <Title title="Recently Added" />
         </div>
         <hr className="mb-5" />
-        <ProductSlider products={products} cardType="col"/>;
+        <ProductSlider products={products} cardType="col"/>
       </div>
     </div>
   );
