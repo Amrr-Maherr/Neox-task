@@ -1,9 +1,11 @@
+// ProductCard.js
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import CardActions from "../Product/CardActions"; // استيراد الكومبوننت
+import CardActions from "../Product/CardActions";
+import { useDispatch } from "react-redux";
+import AddToCartButton from "../AddToCart/AddToCartButton"; // استيراد الكومبوننت الجديد
 
 function ProductCard({ product, cardType }) {
+  const dispatch = useDispatch();
   const isHorizontal = cardType === "col";
 
   return (
@@ -18,7 +20,7 @@ function ProductCard({ product, cardType }) {
       {isHorizontal ? (
         <>
           <img
-            className="w-1/2 h-auto object-contain"
+            className="w-1/2 h-auto object-cover"
             src={product.image}
             alt={product.title}
           />
@@ -27,17 +29,16 @@ function ProductCard({ product, cardType }) {
               <h3 className="text-lg font-semibold">
                 {product.title.slice(0, 10)}
               </h3>
-              <p className="mt-2 text-gray-600">{product.description}</p>
+              <p className="mt-2 text-gray-600">
+                {product.description.slice(0, 10)}
+              </p>
             </div>
             <div>
               <div className="flex justify-between items-center">
                 <span className="font-bold text-gray-800">
                   ${product.price}
                 </span>
-                <FontAwesomeIcon
-                  icon={faShoppingCart}
-                  className="text-blue-500 hover:text-yellow-500 text-md cursor-pointer bg-gray-500 hover:bg-white p-1 rounded-full transition-colors duration-200"
-                />
+                <AddToCartButton product={product}  />{" "}
               </div>
               <div className="transition-opacity duration-300 opacity-0 group-hover:opacity-100">
                 <CardActions />
@@ -51,19 +52,19 @@ function ProductCard({ product, cardType }) {
             <h3 className="text-lg font-semibold">
               {product.title.slice(0, 10)}
             </h3>
-            <p className="mt-2 text-gray-600">{product.description}</p>
+            <p className="mt-2 text-gray-600">
+              {product.description.slice(0, 10)}
+            </p>
           </div>
           <img
-            className="w-full h-auto object-cover"
+            className="w-full h-[200px] object-contain"
             src={product.image}
             alt={product.title}
           />
           <div className="flex justify-between items-center p-4">
             <span className="font-bold text-gray-800">${product.price}</span>
-            <FontAwesomeIcon
-              icon={faShoppingCart}
-              className="text-white hover:text-yellow-500 text-md cursor-pointer bg-gray-500 hover:bg-white p-2 rounded-full transition-colors duration-200"
-            />
+            <AddToCartButton product={product} iconColor="text-white" />{" "}
+            {/* استخدام الكومبوننت الجديد */}
           </div>
           <div className="transition-opacity duration-300 opacity-0 group-hover:opacity-100">
             <CardActions />
