@@ -1,9 +1,11 @@
 import './App.css';
-import TopNavbar from "../src/Components/NavBar/TopNavbar.jsx"
+import "flowbite";
+import Home from './Pages/Home';
+
 function App() {
   return (
     <div className="App">
-      <TopNavbar/>
+      <Home/>
     </div>
   );
 }
