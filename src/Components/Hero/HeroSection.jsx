@@ -2,8 +2,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Slider from "../DynamicSlider/Slider"; // استيراد مكون السلايدر
 import ImagOne from "../../Assets/Smartphones.webp";
-import ImagTwo from "../../Assets/Smartphones.webp";
-import ImagThree from "../../Assets/Smartphones.webp";
+import ImagTwo from "../../Assets/Sounddevice.webp";
+import ImagThree from "../../Assets/WirelessSound-300x300.webp";
 
 export default function HeroSection() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
