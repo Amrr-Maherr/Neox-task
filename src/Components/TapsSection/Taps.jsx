@@ -110,7 +110,7 @@ const Taps = () => {
                     selectedCategory !== "Special Offer" || !product.isSpecial
                 )
                 .map((product) => (
-                  <ProductCard key={product.id} product={product} cardType="row" />
+                  <ProductCard key={product.id} product={product} cardType="col" />
                 ))}
             </div>
           </div>

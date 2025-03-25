@@ -7,6 +7,10 @@ import ProductsGrid from "../Components/ProductsGridSection/ProductsGrid";
 import RecentlyAdded from "../Components/RecentlyAddedSection/RecentlyAdded";
 import Ad from "../Components/Banner/Ad"
 import { Toaster } from "react-hot-toast";
+import BestSellers from "../Components/BestSellersSection/BestSellers";
+import AllCat from "../Components/AllCategories/AllCat";
+import LogoBrands from "../Components/LogoBannar/LogoBrands"
+import FooterIndex from "../Components/Footer/FooterIndex"
 export default function Home() {
   return (
     <>
@@ -16,8 +20,12 @@ export default function Home() {
       <Categories />
       <Taps />
       <ProductsGrid />
-      <RecentlyAdded />
+      <BestSellers />
       <Ad />
+      <AllCat />
+      <RecentlyAdded />
+      <LogoBrands />
+      <FooterIndex/>
       <Toaster />
     </>
   );

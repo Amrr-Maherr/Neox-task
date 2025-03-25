@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../Redux/products/cartSlice";
+import { addItem } from "../../../Redux/products/cartSlice";
 import toast from "react-hot-toast";
 
 function AddToCartButton({ product, iconColor = "text-blue-500" }) {
@@ -21,7 +21,7 @@ function AddToCartButton({ product, iconColor = "text-blue-500" }) {
     <>
       <FontAwesomeIcon
         icon={faShoppingCart}
-        className={`${iconColor} hover:text-yellow-500 text-md cursor-pointer bg-gray-500 hover:bg-white p-2 rounded-full transition-colors duration-200`}
+        className={`text-yellow-400 hover:text-yellow-500 text-md cursor-pointer bg-gray-500 hover:bg-white p-2 rounded-full transition-colors duration-200`}
         onClick={handleAddToCart}
       />
     </>

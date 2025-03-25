@@ -13,7 +13,7 @@ const MainProductCard = ({ product }) => {
         <>
           <div className="mb-2 w-full">
             <h3 className="text-sm text-gray-600 my-3">{product.category}</h3>
-            <h2 className="text-blue-500 font-semibold">{product.name}</h2>
+            <h2 className="text-blue-500 font-semibold">{product.name.slice(0,10)}</h2>
           </div>
           <figure
             className="flex-grow flex items-center justify-center overflow-hidden"

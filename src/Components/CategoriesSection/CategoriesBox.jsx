@@ -12,7 +12,7 @@ export default function CategoriesBox({ data }) {
             <img
               src={data.Image}
               alt={data.title}
-              className="w-36 h-36 object-cover rounded-md"
+              className="w-36 h-36 object-contain rounded-md"
             />
           </figure>
         </div>

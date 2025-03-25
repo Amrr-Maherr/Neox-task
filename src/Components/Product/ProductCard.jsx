@@ -2,31 +2,31 @@
 import React from "react";
 import CardActions from "../Product/CardActions";
 import { useDispatch } from "react-redux";
-import AddToCartButton from "../AddToCart/AddToCartButton"; // استيراد الكومبوننت الجديد
+import AddToCartButton from "./AddToCart/AddToCartButton"; // استيراد الكومبوننت الجديد
 
 function ProductCard({ product, cardType }) {
   const dispatch = useDispatch();
-  const isHorizontal = cardType === "col";
+  const isHorizontal = cardType === "row";
 
   return (
     <div
       className={`
         ${isHorizontal ? "flex-row" : "flex-col"}
         flex 
-        border rounded-lg hover:shadow-md group relative
+        rounded-lg hover:shadow-xl group relative my-5
         ${isHorizontal ? "max-w-xl" : "max-w-sm"}
       `}
     >
       {isHorizontal ? (
         <>
           <img
-            className="w-1/2 h-auto object-cover"
+            className="w-1/2 h-[150px] object-contain"
             src={product.image}
             alt={product.title}
           />
           <div className="w-1/2 p-1 flex flex-col justify-around">
             <div>
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-md text-gray-400 font-light">
                 {product.title.slice(0, 10)}
               </h3>
               <p className="mt-2 text-gray-600">
@@ -38,7 +38,7 @@ function ProductCard({ product, cardType }) {
                 <span className="font-bold text-gray-800">
                   ${product.price}
                 </span>
-                <AddToCartButton product={product}  />{" "}
+                <AddToCartButton product={product} />{" "}
               </div>
               <div className="transition-opacity duration-300 opacity-0 group-hover:opacity-100">
                 <CardActions />
@@ -49,10 +49,10 @@ function ProductCard({ product, cardType }) {
       ) : (
         <>
           <div className="p-4">
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-md font-semibold text-gray-400">
               {product.title.slice(0, 10)}
             </h3>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-[#0163BD]">
               {product.description.slice(0, 10)}
             </p>
           </div>

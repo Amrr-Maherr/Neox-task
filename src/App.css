@@ -1,9 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
     font-family: "Inter", sans-serif;
 }
+
+/* .swiper-pagination {
+    bottom: -10px !important;
+} */
+
 .swiper-pagination-bullet {
     background-color: rgba(128, 128, 128, 0.7);
     /* لون النقاط الغير نشطة مع شفافية */
@@ -32,7 +38,7 @@ body {
 /* تنسيق النقطة النشطة (Active Bullet) */
 .swiper-pagination-bullet-active {
     background-color: #FFD700 !important;
-    /*لونذهبيللنقطةالنشطة*/
+    /* لون ذهبي للنقطة النشطة */
     opacity: 1;
     width: 30px !important;
     height: 8px !important;
