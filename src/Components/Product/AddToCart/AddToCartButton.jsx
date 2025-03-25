@@ -21,7 +21,7 @@ function AddToCartButton({ product, iconColor = "text-blue-500" }) {
     <>
       <FontAwesomeIcon
         icon={faShoppingCart}
-        className={`text-yellow-400 hover:text-yellow-500 text-md cursor-pointer bg-gray-500 hover:bg-white p-2 rounded-full transition-colors duration-200`}
+        className={`text-yellow-400 hover:text-yellow-500 text-md cursor-pointer bg-gray-200 hover:bg-white p-2 rounded-full transition-colors duration-200`}
         onClick={handleAddToCart}
       />
     </>
