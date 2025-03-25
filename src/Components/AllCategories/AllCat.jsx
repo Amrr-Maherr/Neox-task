@@ -64,7 +64,13 @@ export default function AllCat() {
 
           {/* Column 4 (Empty) */}
           <div className="mt-5">
-            <img src={MainImg} alt="" className="object-contain" />
+            <figure className="relative pt-[91%]">
+              <img
+                className="absolute top-0 left-0 bottom-0 right-0 w-full h-full object-cover"
+                src={MainImg}
+                alt=""
+              />
+            </figure>
           </div>
         </div>
       </section>

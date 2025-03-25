@@ -1,32 +1,70 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-function Slider({ slides, height, imageClassName, slidesPerView = 1 }) {
-  // قيمة افتراضية لـ slidesPerView
+function Slider({
+  slides = [],
+  children,
+  height = "400px",
+  imageClassName = "",
+  slidesPerView = 1,
+  autoplay = true,
+  loop = true,
+  withControls = false,
+  withPagination = true, // استخدمها فقط للتحقق من وجود Pagination
+}) {
+  // تحديد مصدر المحتوى (إما slides أو children)
+  const content = children
+    ? React.Children.toArray(children)
+    : slides.map((slide, index) => (
+        <img
+          key={index}
+          src={slide.image}
+          alt={slide.title || `Slide ${index}`}
+          className={`w-full ${imageClassName}`}
+          style={{ height, objectFit: "contain" }}
+        />
+      ));
+
   return (
-    <div>
+    <div className="relative">
       <Swiper
-        modules={[Autoplay]}
+        modules={[
+          ...(withControls ? [Navigation] : []),
+          ...(withPagination ? [Pagination] : []),
+          Autoplay,
+        ]} // اضافة Pagination الى modules بشكل شرطي
         spaceBetween={30}
-        slidesPerView={slidesPerView} // استخدام الـ prop slidesPerView
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        slidesPerView={slidesPerView}
+        loop={loop}
+        autoplay={
+          autoplay ? { delay: 2500, disableOnInteraction: false } : false
+        }
+        navigation={withControls}
+        pagination={
+          withPagination
+            ? {
+                // تمرير الـ pagination object بشكل شرطي
+                clickable: true,
+                dynamicBullets: true,
+                el: ".swiper-pagination",
+                type: "bullets",
+              }
+            : false
+        }
       >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className={`w-full ${imageClassName}`}
-              style={{ height: height, objectFit: "contain" }}
-            />
-          </SwiperSlide>
+        {content.map((item, index) => (
+          <SwiperSlide key={index}>{item}</SwiperSlide>
         ))}
+        {withPagination && ( // عرض الـ div الخاص بالـ pagination بشكل شرطي
+          <div
+            className="swiper-pagination"
+            style={{ position: "absolute", bottom: "5px" }}
+          />
+        )}
       </Swiper>
     </div>
   );

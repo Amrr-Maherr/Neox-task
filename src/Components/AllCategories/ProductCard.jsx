@@ -1,14 +1,17 @@
-// ProductCard.jsx
 import React from "react";
 
 function ProductCard({ product }) {
   return (
     <div className="rounded-lg p-4 mb-4 flex items-center">
-      <img
-        src={product.imageUrl}
-        alt={product.name}
-        className="w-20 h-20 object-contain rounded-md mr-4"
-      />
+      {/* التعديل على قسم الصورة */}
+      <div className="relative w-20 h-20 rounded-md mr-4 overflow-hidden">
+        <img
+          src={product.imageUrl}
+          alt={product.name}
+          className="absolute top-0 left-0 w-full h-full object-contain"
+        />
+      </div>
+
       <div className="w-2/3 pl-4">
         <h3 className="text-sm font-semibold mb-1 text-[#116CC1]">
           {product.name}

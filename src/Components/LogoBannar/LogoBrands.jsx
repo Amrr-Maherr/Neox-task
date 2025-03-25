@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "../DynamicSlider/Slider";
-
 import One from "../../Assets/themeforest1.webp";
 import Two from "../../Assets/themeforest2.webp";
 import Three from "../../Assets/themeforest3.webp";
@@ -17,19 +16,28 @@ export default function LogoPrands() {
   }));
 
   return (
-    <>
-      <section className="py-8 w-[85%] mx-auto">
-        <hr className="border-gray-300" />
-        <div>
-          <Slider
-            slides={slides}
-            height={100}
-            imageClassName="logo-image"
-            slidesPerView={4} // عرض 4 صور
-          />
-        </div>
-        <hr className="border-gray-300" />
-      </section>
-    </>
+    <section className="py-8 w-[85%] mx-auto">
+      <hr className="border-gray-300" />
+      <div className="my-4">
+        <Slider
+          slides={slides}
+          height={100}
+          imageClassName="logo-image"
+          slidesPerView={4}
+          spaceBetween={30}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          breakpoints={{
+            320: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+          }}
+        />
+      </div>
+      <hr className="border-gray-300" />
+    </section>
   );
 }

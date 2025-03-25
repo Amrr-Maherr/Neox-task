@@ -3,17 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-
 import "@fortawesome/fontawesome-svg-core/styles.css";
-
-
 import ImagOne from "../../Assets/GoldPhone-1-150x150.webp";
 import ImagTwo from "../../Assets/GoldPhone-1-150x150.webp";
 import ImagThree from "../../Assets/GoldPhone-1-150x150.webp";
-
 import TopLinks from "../ProductsGridSection/TopLinks";
 import ProductCard from "../ProductsGridSection/ProductCard";
 import MainCard from "../ProductsGridSection/MainCard";
+import Slider from "../DynamicSlider/Slider"; // الكومبونانت الجديد
 
 const ProductGridTwo = () => {
   const products = [
@@ -188,6 +185,34 @@ const ProductGridTwo = () => {
   const slider2Products = products.slice(6, 12);
   const slider3Products = products.slice(12, 18);
 
+  const renderProductGrid = (sliderProducts) => (
+    <div className="grid md:grid-cols-3 grid-cols-1 gap-2">
+      <div className="md:col-span-1 col-span-1" style={{ gridRow: "auto" }}>
+        {sliderProducts[0] && (
+          <ProductCard product={sliderProducts[0]} key={sliderProducts[0].id} />
+        )}
+        {sliderProducts[3] && (
+          <ProductCard product={sliderProducts[3]} key={sliderProducts[3].id} />
+        )}
+      </div>
+
+      <div className="bg-white p-2 flex flex-col items-center mb-2 card group">
+        {sliderProducts[1] && (
+          <MainCard product={sliderProducts[1]} key={sliderProducts[1].id} />
+        )}
+      </div>
+
+      <div className="md:col-span-1 col-span-1" style={{ gridRow: "auto" }}>
+        {sliderProducts[4] && (
+          <ProductCard product={sliderProducts[4]} key={sliderProducts[4].id} />
+        )}
+        {sliderProducts[5] && (
+          <ProductCard product={sliderProducts[5]} key={sliderProducts[5].id} />
+        )}
+      </div>
+    </div>
+  );
+
   return (
     <div className="bg-gray-100 py-8 my-5">
       <div className="mx-auto px-4 w-[85%]">
@@ -195,65 +220,18 @@ const ProductGridTwo = () => {
 
         <hr className="border-gray-300 mb-8" />
 
-        <Swiper
+        <Slider
           modules={[Pagination]}
           spaceBetween={50}
           slidesPerView={1}
           pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          loop={true}
         >
-          {[slider1Products, slider2Products, slider3Products].map(
-            (sliderProducts, index) => (
-              <SwiperSlide key={index}>
-                <div className="grid  md:grid-cols-3 grid-cols-1 gap-2 ">
-                  <div
-                    className="md:col-span-1 col-span-1"
-                    style={{ gridRow: "auto" }}
-                  >
-                    {sliderProducts[0] && (
-                      <ProductCard
-                        product={sliderProducts[0]}
-                        key={sliderProducts[0].id}
-                      />
-                    )}
-                    {sliderProducts[3] && (
-                      <ProductCard
-                        product={sliderProducts[3]}
-                        key={sliderProducts[3].id}
-                      />
-                    )}
-                  </div>
-
-                  <div className="bg-white p-2 flex flex-col items-center mb-2 card group">
-                    {sliderProducts[1] && (
-                      <MainCard
-                        product={sliderProducts[1]}
-                        key={sliderProducts[1].id}
-                      />
-                    )}
-                  </div>
-
-                  <div
-                    className="md:col-span-1 col-span-1"
-                    style={{ gridRow: "auto" }}
-                  >
-                    {sliderProducts[4] && (
-                      <ProductCard
-                        product={sliderProducts[4]}
-                        key={sliderProducts[4].id}
-                      />
-                    )}
-                    {sliderProducts[5] && (
-                      <ProductCard
-                        product={sliderProducts[5]}
-                        key={sliderProducts[5].id}
-                      />
-                    )}
-                  </div>
-                </div>
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
+          <SwiperSlide>{renderProductGrid(slider1Products)}</SwiperSlide>
+          <SwiperSlide>{renderProductGrid(slider2Products)}</SwiperSlide>
+          <SwiperSlide>{renderProductGrid(slider3Products)}</SwiperSlide>
+        </Slider>
       </div>
     </div>
   );

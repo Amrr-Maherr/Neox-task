@@ -16,17 +16,17 @@ const SpecialOfferCard = () => {
       {specialOfferProducts.map((product) => (
         <div
           key={product.id}
-          className="border-2 border-yellow-400 p-4 rounded-xl text-center hover:scale-105 transition-transform duration-300 flex flex-col h-full"
+          className="border-2 border-yellow-400 p-4 rounded-xl text-center hover:scale-105 transition-transform duration-300 flex flex-col"
         >
           <div className="product-info flex flex-col h-full">
             <h4 className="text-xl text-start font-medium text-black mb-5">
               SPECIAL OFFER
             </h4>
-            <div className="relative w-full pt-[150px] flex-grow">
+            <div className="relative w-full pt-[100%]">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-contain absolute top-0 left-0"
+                className="w-full h-full object-cover absolute top-0 left-0"
               />
             </div>
             <div className="mt-auto">
