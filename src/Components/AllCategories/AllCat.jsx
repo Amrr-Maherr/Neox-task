@@ -1,7 +1,7 @@
 // AllCat.jsx
 import React from "react";
 import ImagOne from "../../Assets/360-camers.webp";
-import MainImg from "../../Assets/360-camers.webp";
+import MainImg from "../../Assets/footer-widget-img-01-275x300.webp";
 import ProductColumn from "../AllCategories/ProductColumn";
 
 export default function AllCat() {
