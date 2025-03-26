@@ -1,4 +1,3 @@
-// HeroSection.js
 import React, { useState, useRef, useEffect } from "react";
 import Slider from "../DynamicSlider/Slider"; // استيراد مكون السلايدر
 import ImagOne from "../../Assets/Smartphones.webp";
@@ -215,7 +214,29 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <Slider slides={sliderImages} height={sliderHeight} />
+      <Slider>
+        {sliderImages.map((slide, index) => (
+          <div
+            key={index}
+            className="relative h-full flex items-center justify-between flex-row-reverse"
+          >
+            <div className="w-1/2 h-full flex justify-end items-center">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-[400px] h-full object-contain"
+              />
+            </div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-start text-black z-10">
+              <h2 className="text-3xl font-bold">{slide.title}</h2>
+              <p className="text-lg">{slide.subTitle}</p>
+              <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full mt-4">
+                {slide.buttonText}
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </>
   );
 }

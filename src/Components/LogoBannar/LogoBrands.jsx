@@ -10,17 +10,11 @@ import Six from "../../Assets/themeforest6.webp";
 export default function LogoPrands() {
   const images = [One, Two, Three, Four, Five, Six];
 
-  const slides = images.map((image, index) => ({
-    image: image,
-    title: `Logo ${index + 1}`,
-  }));
-
   return (
     <section className="py-8 w-[85%] mx-auto">
       <hr className="border-gray-300" />
       <div className="my-4">
         <Slider
-          slides={slides}
           height={100}
           imageClassName="logo-image"
           slidesPerView={4}
@@ -35,7 +29,18 @@ export default function LogoPrands() {
             640: { slidesPerView: 3 },
             768: { slidesPerView: 4 },
           }}
-        />
+        >
+          {images.map((image, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <img
+                src={image}
+                alt={`Logo ${index + 1}`}
+                className="logo-image" // Keep the className for styling
+                style={{ height: "100px", width: "auto" }} // Set a fixed height for the logos
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
       <hr className="border-gray-300" />
     </section>
