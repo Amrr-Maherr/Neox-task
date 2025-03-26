@@ -343,7 +343,7 @@ export default function HeroSection() {
         {sliderImages.map((slide, index) => (
           <div
             key={index}
-            className="relative h-full flex items-center justify-between flex-row-reverse"
+            className="relative h-full flex items-center justify-between flex-row-reverse w-[85%] mx-auto"
           >
             <div className="w-1/2 h-full flex justify-end items-center">
               <img
