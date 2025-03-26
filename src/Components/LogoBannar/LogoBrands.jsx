@@ -35,8 +35,7 @@ export default function LogoPrands() {
               <img
                 src={image}
                 alt={`Logo ${index + 1}`}
-                className="logo-image" // Keep the className for styling
-                style={{ height: "100px", width: "auto" }} // Set a fixed height for the logos
+                className="logo-image"
               />
             </div>
           ))}

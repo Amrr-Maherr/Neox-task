@@ -30,7 +30,7 @@ export default function Categories() {
   return (
     <>
       <section className="w-[85%] mx-auto">
-        <div className="container grid grid-col-1 md:grid-cols-3 gap-4 my-5">
+        <div className="container grid grid-col-1 md:grid-cols-3 gap-4 my-5 mx-auto">
           {CategoriesData?.map((item, index) => (
             <a href="#">
               <CategoriesBox key={index} data={item} />
