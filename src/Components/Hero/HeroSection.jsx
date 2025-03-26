@@ -24,13 +24,6 @@ export default function HeroSection() {
       buttonText: "View collection",
       offer: "30% OFF",
     },
-    {
-      image: ImagThree,
-      title: "MODERN DESIGNS MEET CLASSIC BEAUTY",
-      subTitle: "MODERN DESIGNS MEET CLASSIC BEAUTY",
-      buttonText: "Get yours",
-      offer: "60% OFF",
-    },
   ];
 
   const departments = [
