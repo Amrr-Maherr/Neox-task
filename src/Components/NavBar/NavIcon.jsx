@@ -8,8 +8,7 @@ import {
   faTrash, // Import trash icon
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux"; // Import useDispatch and useSelector
-import { removeItem } from "../../Redux/products/cartSlice"; // Import removeItem action
-import toast from "react-hot-toast"; // Import toast
+import { removeItemWithToast } from "../../Redux/products/cartSlice"; // Import removeItemWithToast action
 
 function NavIcon() {
   const dispatch = useDispatch();
@@ -20,13 +19,8 @@ function NavIcon() {
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const handleRemoveItem = (id) => {
-    dispatch(removeItem(id)); // Dispatch removeItem action
-    toast.success("Item removed from cart!", {
-      duration: 2000,
-      position: "bottom-right",
-    });
+    dispatch(removeItemWithToast(id)); // Dispatch removeItemWithToast action
   };
-
 
   return (
     <>

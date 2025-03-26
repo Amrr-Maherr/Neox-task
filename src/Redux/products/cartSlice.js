@@ -19,6 +19,24 @@ export const addItemWithToast = createAsyncThunk(
   }
 );
 
+// Async thunk action for removing item and showing toast
+export const removeItemWithToast = createAsyncThunk(
+  "cart/removeItemWithToast",
+  async (itemId, { dispatch }) => {
+    try {
+      dispatch(removeItem(itemId)); // Dispatch the original removeItem
+      toast.success("Item removed from cart!", {
+        duration: 2000,
+        position: "bottom-right",
+      });
+    } catch (error) {
+      console.error("Error removing item from cart:", error);
+      toast.error("Failed to remove item from cart.");
+      throw error;
+    }
+  }
+);
+
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
@@ -84,6 +102,18 @@ const cartSlice = createSlice({
     builder.addCase(addItemWithToast.rejected, (state, action) => {
       // Optional: set loading state to false and handle the error
       console.error("Failed to add item:", action.error.message);
+    });
+    builder.addCase(removeItemWithToast.pending, (state) => {
+      //  Optional: set loading state to true for the cart or similar
+      // console.log('Removing item...');
+    });
+    builder.addCase(removeItemWithToast.fulfilled, (state) => {
+      // Optional:  set loading state to false for the cart or similar
+      // console.log('Item removed successfully!');
+    });
+    builder.addCase(removeItemWithToast.rejected, (state, action) => {
+      // Optional: set loading state to false and handle the error
+      console.error("Failed to remove item:", action.error.message);
     });
   },
 });
