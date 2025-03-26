@@ -1,5 +1,23 @@
-// cartSlice.js
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
+
+// Async thunk action for adding item and showing toast
+export const addItemWithToast = createAsyncThunk(
+  "cart/addItemWithToast",
+  async (product, { dispatch }) => {
+    try {
+      dispatch(addItem(product));
+      toast.success(`${product.title.slice(0, 15)}... added to cart!`, {
+        duration: 2000,
+        position: "bottom-right",
+      });
+    } catch (error) {
+      // Handle errors if needed
+      console.error("Error adding item to cart:", error);
+      toast.error("Failed to add item to cart."); //optional:  show a error message
+    }
+  }
+);
 
 const cartSlice = createSlice({
   name: "cart",
@@ -52,6 +70,21 @@ const cartSlice = createSlice({
         0
       );
     },
+  },
+  extraReducers: (builder) => {
+    // Optional: Handle pending/fulfilled/rejected states of the async thunk
+    builder.addCase(addItemWithToast.pending, (state) => {
+      //  Optional: set loading state to true for the cart or similar
+      // console.log('Adding item...');
+    });
+    builder.addCase(addItemWithToast.fulfilled, (state) => {
+      // Optional:  set loading state to false for the cart or similar
+      // console.log('Item added successfully!');
+    });
+    builder.addCase(addItemWithToast.rejected, (state, action) => {
+      // Optional: set loading state to false and handle the error
+      console.error("Failed to add item:", action.error.message);
+    });
   },
 });
 

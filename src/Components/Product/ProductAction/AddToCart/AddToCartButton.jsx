@@ -1,20 +1,14 @@
-// AddToCartButton.js
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../../Redux/products/cartSlice";
-import toast from "react-hot-toast";
+import { addItemWithToast } from "../../../../Redux/products/cartSlice"; // Import the async action
 
-function AddToCartButton({ product, iconColor = "text-blue-500" }) {
+function AddToCartButton({ product }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addItem({ ...product }));
-    toast.success(`${product.title.slice(0, 15)}... added to cart!`, {
-      duration: 2000,
-      position: "bottom-right",
-    });
+    dispatch(addItemWithToast(product)); // Dispatch the async action
   };
 
   return (
