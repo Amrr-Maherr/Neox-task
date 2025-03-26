@@ -9,7 +9,7 @@ function ProductCard({ product, cardType = "col" }) {
     <div
       className={`
       flex 
-      border rounded-lg hover:shadow-md bg-white overflow-hidden
+      border rounded-lg hover:shadow-md bg-white overflow-hidden relative
       ${isHorizontal ? "flex-row h-auto" : "flex-col h-auto"}
     `}
     >
@@ -22,7 +22,13 @@ function ProductCard({ product, cardType = "col" }) {
           />
         </figure>
       </div>
-      <div className={isHorizontal ? `text-center p-4` : "order-1 p-4"}>
+      <div
+        className={
+          isHorizontal
+            ? `text-center p-4 absolute right-0 top-0`
+            : "order-1 py-2 px-4"
+        }
+      >
         <h3 className="font-medium text-lg">{product.title.slice(0, 10)}</h3>
         <p className="text-gray-600 text-sm">
           {product.description.slice(0, 10)}

@@ -153,7 +153,6 @@ export default function HeroSection() {
                 {isMegaMenuOpen && (
                   <div className="absolute left-0 top-full mt-1 w-auto bg-white border rounded-md shadow-lg z-10">
                     <div className="flex">
-                      
                       <div className="py-4 px-6 w-64">
                         <h3 className="font-semibold text-gray-700 mb-2">
                           Category 2
@@ -308,11 +307,13 @@ export default function HeroSection() {
             className="relative h-[50dvh] flex items-center justify-between flex-row-reverse w-[85%] mx-auto"
           >
             <div className="w-1/2 h-full flex justify-end items-center">
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-[400px] h-full object-contain"
-              />
+              <figure className="relative">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full  object-cover "
+                />
+              </figure>
             </div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-start text-black z-10">
               <h2 className="text-3xl font-bold">{slide.title}</h2>

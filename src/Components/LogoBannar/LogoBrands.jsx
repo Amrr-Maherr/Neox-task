@@ -15,7 +15,6 @@ export default function LogoPrands() {
       <hr className="border-gray-300" />
       <div className="my-4">
         <Slider
-          height={100}
           imageClassName="logo-image"
           slidesPerView={4}
           spaceBetween={30}
@@ -31,13 +30,13 @@ export default function LogoPrands() {
           }}
         >
           {images.map((image, index) => (
-            <div key={index} className="flex items-center justify-center">
+            <figure className="relative pt-[83%]">
               <img
                 src={image}
                 alt={`Logo ${index + 1}`}
-                className="logo-image"
+                className="logo-image inset-0 absolute h-full w-full object-contain"
               />
-            </div>
+            </figure>
           ))}
         </Slider>
       </div>
