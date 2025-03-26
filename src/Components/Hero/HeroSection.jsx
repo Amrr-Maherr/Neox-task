@@ -158,32 +158,164 @@ export default function HeroSection() {
                   All Pages
                 </button>
                 {isMegaMenuOpen && (
-                  <div className="absolute left-0 top-full mt-1 w-64 bg-white border rounded-md shadow-lg z-10">
-                    <div className="py-1">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Home
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Shop
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Products
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Contact Us
-                      </a>
+                  <div className="absolute left-0 top-full mt-1 w-auto bg-white border rounded-md shadow-lg z-10">
+                    <div className="flex">
+                      <div className="py-4 px-6 w-64">
+                        <h3 className="font-semibold text-gray-700 mb-2">
+                          Category 1
+                        </h3>
+                        <ul>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 1
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 2
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 3
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 4
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="py-4 px-6 w-64">
+                        <h3 className="font-semibold text-gray-700 mb-2">
+                          Category 2
+                        </h3>
+                        <ul>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 1
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 2
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 3
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 4
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="py-4 px-6 w-64">
+                        <h3 className="font-semibold text-gray-700 mb-2">
+                          Category 3
+                        </h3>
+                        <ul>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 1
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 2
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 3
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 4
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="py-4 px-6 w-64">
+                        <h3 className="font-semibold text-gray-700 mb-2">
+                          Category 4
+                        </h3>
+                        <ul>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 1
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 2
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 3
+                            </a>
+                          </li>
+                          <li className="mb-1">
+                            <a
+                              href="#"
+                              className="text-sm text-gray-500 hover:text-gray-700 block py-2"
+                            >
+                              Link 4
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 )}
