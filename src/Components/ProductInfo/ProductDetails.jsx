@@ -16,20 +16,21 @@ export default function ProductDetails() {
           <MegaMenu />
           <Breadcrumb />
           <div className="grid grid-cols-4 w-[85%] mx-auto">
-            <div className="grid-cols-1 hidden md:block">
+            <div className="col-span-1 hidden md:block">
               <div className="mb-[20px]">
                 <CatBox />
               </div>
               <div>
-                <Banner/>
+                <Banner />
               </div>
               <div className="my-[20px]">
-                <LatestProducts/>
+                <LatestProducts />
               </div>
             </div>
+            <div className="col-span-3 w-full bg-red-500"></div>
           </div>
-          <LogoPrands/>
-          <FooterIndex/>
+          <LogoPrands />
+          <FooterIndex />
         </section>
       </>
     );
