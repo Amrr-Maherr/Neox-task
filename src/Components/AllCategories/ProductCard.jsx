@@ -3,7 +3,6 @@ import React from "react";
 function ProductCard({ product }) {
   return (
     <div className="rounded-lg p-4 mb-4 flex items-center">
-      {/* التعديل على قسم الصورة */}
       <div className="relative w-20 h-20 rounded-md mr-4 overflow-hidden">
         <img
           src={product.imageUrl}
@@ -17,7 +16,6 @@ function ProductCard({ product }) {
           {product.name}
         </h3>
         <div className="text-yellow-500">★★★★★</div>{" "}
-        {/* Static 5-star rating */}
         <p className="text-gray-300 font-light">{product.price}</p>
         {product.originalPrice && (
           <p className="text-gray-400 line-through">{product.originalPrice}</p>

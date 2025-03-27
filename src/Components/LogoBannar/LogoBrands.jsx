@@ -30,11 +30,11 @@ export default function LogoPrands() {
           }}
         >
           {images.map((image, index) => (
-            <figure className="relative pt-[83%]">
+            <figure className="">
               <img
                 src={image}
                 alt={`Logo ${index + 1}`}
-                className="logo-image inset-0 absolute h-full w-full object-contain"
+                className="logo-imag object-contain"
               />
             </figure>
           ))}
