@@ -16,7 +16,7 @@ function ProductCard({ product, cardType = "col" }) {
       <div className={isHorizontal ? `w-full my-4` : "order-2 w-full my-4 "}>
         <figure className="relative pt-[100%]">
           <img
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             src={product.image}
             alt={product.title}
           />
