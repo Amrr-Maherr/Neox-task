@@ -2,13 +2,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import { addItemWithToast } from "../../../../Redux/products/cartSlice"; // Import the async action
+import { addItemWithToast } from "../../../../Redux/products/cartSlice";
 
 function AddToCartButton({ product }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addItemWithToast(product)); // Dispatch the async action
+    dispatch(addItemWithToast(product));
   };
 
   return (

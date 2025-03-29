@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function CatBox() {
+export default function CatBox({id}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -32,10 +32,11 @@ export default function CatBox() {
             )}
           </li>
           <li className="py-3 px-3 border-b-2">
-            TV & Audio <span className="text-gray-300 font-light">(1)</span>
+            TV & Audio <span className="text-gray-300 font-light">({id})</span>
           </li>
           <li className="py-3 px-10 font-bold">
-            Audio Speakers <span className="text-gray-300 font-light">(1)</span>
+            Audio Speakers{" "}
+            <span className="text-gray-300 font-light">({id})</span>
           </li>
         </ul>
       </div>
