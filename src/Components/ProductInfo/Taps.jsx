@@ -17,7 +17,7 @@ export default function Taps() {
 
   return (
     <>
-      <div className="flex items-center justify-around text-2xl mt-[50px]">
+      <div className="flex items-center justify-around flex-wrap text-2xl mt-[50px]">
         <Link to={`/product/${id}/accessories`}>
           <h3
             className={` focus:outline-none pb-0 focus:pb-0.5
