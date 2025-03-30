@@ -8,10 +8,12 @@ import LatestProducts from "./LatestProducts";
 import LogoPrands from "../LogoBannar/LogoBrands";
 import FooterIndex from "../Footer/FooterIndex";
 import ProductBox from "./ProductBox";
+import RecentlyAdded from "../RecentlyAddedSection/RecentlyAdded";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Outlet, useParams } from "react-router-dom";
 import Loader from "../Spinner/Loader";
+import Taps from "./Taps";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -64,9 +66,8 @@ export default function ProductDetails() {
           </div>
           <div className="col-span-3 w-full">
             <ProductBox product={product} key={product.id} />
-            <div>
-              <Outlet/>
-            </div>
+            <Taps/>
+            <RecentlyAdded />
           </div>
         </div>
         <LogoPrands />

@@ -54,7 +54,7 @@ const RecentlyAdded = () => {
   }
 
   return (
-    <div className="bg-white my-5 py-10 mx-auto w-[85%]">
+    <div className="bg-white my-5 py-10 mx-auto">
       <div className="px-4">
         <div className="flex justify-between items-center">
           <Title title="Recently Added" />
