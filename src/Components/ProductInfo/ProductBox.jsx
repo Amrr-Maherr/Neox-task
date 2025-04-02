@@ -48,8 +48,8 @@ export default function ProductBox({ product }) {
               <Wishlist />
             </p>
           </div>
-          <div className="my-5">
-            <ul className="list-disc text-sm md:text-base">
+          <div className="my-5 ml-5">
+            <ul className="list-disc text-xl text-gray-400">
               <li>4.7 inch 720p Screen</li>
               <li>Android 6.0 OS</li>
               <li>2.4 GHz Quad Core™ Processor</li>

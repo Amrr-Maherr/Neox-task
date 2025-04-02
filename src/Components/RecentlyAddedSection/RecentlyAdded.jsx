@@ -15,7 +15,7 @@ import Slider from "../DynamicSlider/Slider";
 
 config.autoAddCss = false;
 
-const RecentlyAdded = () => {
+const RecentlyAdded = ({width}) => {
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
   const status = useSelector(selectProductsStatus);
@@ -54,7 +54,7 @@ const RecentlyAdded = () => {
   }
 
   return (
-    <div className="bg-white my-5 py-10 mx-auto">
+    <div className={`bg-white my-5 py-10 mx-auto ${width}`}>
       <div className="px-4">
         <div className="flex justify-between items-center">
           <Title title="Recently Added" />

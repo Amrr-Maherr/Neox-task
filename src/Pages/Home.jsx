@@ -23,7 +23,7 @@ export default function Home() {
       <BestSellers />
       <Ad />
       <AllCat />
-      <RecentlyAdded />
+      <RecentlyAdded width="w-[85%]"/>
       <LogoBrands />
       <FooterIndex/>
       <Toaster />

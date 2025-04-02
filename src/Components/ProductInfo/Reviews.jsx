@@ -26,7 +26,6 @@ export default function Reviews() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      // Handle form submission here (e.g., send data to API)
       console.log(values);
       alert(JSON.stringify(values, null, 2));
     },
@@ -172,7 +171,7 @@ export default function Reviews() {
                 <textarea
                   id="reviewText"
                   name="reviewText"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
+                  className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
                   placeholder="Share your thoughts about this product!"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -197,7 +196,7 @@ export default function Reviews() {
                   type="text"
                   id="name"
                   name="name"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border  rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="Enter your name"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -222,7 +221,7 @@ export default function Reviews() {
                   type="email"
                   id="email"
                   name="email"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border  rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="Enter your email"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -255,7 +254,7 @@ export default function Reviews() {
               <div>
                 <button
                   type="submit"
-                  className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4  rounded-full focus:outline-none focus:shadow-outline"
                 >
                   Submit Review
                 </button>
