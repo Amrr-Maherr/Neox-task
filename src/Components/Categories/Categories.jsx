@@ -6,6 +6,7 @@ import CatBox from "../ProductInfo/CatBox";
 import LatestProducts from "../ProductInfo/LatestProducts";
 import MegaMenu from "../ProductInfo/MegaMenu"
 import RecentlyAdded from "../RecentlyAddedSection/RecentlyAdded";
+import FooterIndex from "../Footer/FooterIndex"
 export default function Categories() {
     return (
       <>
@@ -31,6 +32,7 @@ export default function Categories() {
             </div>
           </div>
         </section>
+        <FooterIndex/>
       </>
     );
 }
