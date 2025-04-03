@@ -10,54 +10,58 @@ import Small from "../../Assets/1-100x100.webp";
 
 export default function ProductBox({ product }) {
   console.log(product);
-  const images = [product.image, Small, One, Small, One];
+  const images = [product.image, Small, One, Small, One]
   return (
     <>
-      <div className="grid grid-cols-4 gap-5 mx-auto">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto p-4">
+        <div>
           <ImageGallery images={images} />
         </div>
-        <div className="col-span-2 ">
+        <div>
           <div>
-            <p className="text-gray-300 mb-5">{product.category}</p>
-          </div>
-          <div>
-            <p className="text-xl md:text-2xl lg:text-3xl mb-3">
-              {product.title.slice(0, 30)}
+            <p className="text-gray-400 text-sm md:text-base mb-2 md:mb-3">
+              {product.category}
             </p>
           </div>
           <div>
-            <p className="text-sm md:text-base">
-              {product.description.slice(0, 100)}
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-3">
+              {product.title}
+            </h1>
+          </div>
+          <div>
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              {product.description}
             </p>
           </div>
-          <div className="my-5 flex items-center">
+          <div className="my-4 flex items-center">
             <FontAwesomeIcon icon={faStar} className="text-yellow-400" />
             <FontAwesomeIcon icon={faStar} className="text-yellow-400" />
             <FontAwesomeIcon icon={faStar} className="text-yellow-400" />
             <FontAwesomeIcon icon={faStar} className="text-yellow-400" />
-            <FontAwesomeIcon icon={faStar} className="text-yellow-400" />
-            <p className="ml-2 text-sm md:text-base">(3 customer reviews)</p>
-          </div>
-          <hr />
-          <div className="flex items-center justify-start my-5 gap-3">
-            <p>
-              <Compare />
-            </p>
-            <p>
-              <Wishlist />
+            <FontAwesomeIcon icon={faStar} className="text-gray-300" />{" "}
+            <p className="ml-2 text-xs md:text-sm text-gray-500">
+              ({product.rating?.rate} rating) - ({product.rating?.count}{" "}
+              reviews)
             </p>
           </div>
-          <div className="my-5 ml-5">
-            <ul className="list-disc text-xl text-gray-400">
+          <hr className="my-4" />
+          <div className="flex items-center justify-start my-4 gap-4">
+            <Compare product={product} /> 
+            <Wishlist product={product} />
+          </div>
+          <div className="my-4 ml-1">
+            {" "}
+            <ul className="list-disc list-inside text-sm md:text-base text-gray-500 space-y-1">
               <li>4.7 inch 720p Screen</li>
               <li>Android 6.0 OS</li>
               <li>2.4 GHz Quad Core™ Processor</li>
               <li>23 MP front Camera</li>
             </ul>
           </div>
-          <div>
-            <p className="text-2xl md:text-3xl lg:text-4xl">${product.price}</p>
+          <div className="my-4">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600">
+              ${product.price}
+            </p>
           </div>
           <div className="my-5">
             <AddToCartWithQuantity product={product} />

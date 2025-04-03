@@ -59,7 +59,7 @@ const RecentlyAdded = ({width}) => {
         <div className="flex justify-between items-center">
           <Title title="Recently Added" />
         </div>
-        <hr className="mb-5" />
+        <hr className="mb-5 flex" />
         {content}
       </div>
     </div>

@@ -171,7 +171,7 @@ export default function Reviews() {
                 <textarea
                   id="reviewText"
                   name="reviewText"
-                  className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
+                  className="shadow appearance-none border rounded-full w-full p-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
                   placeholder="Share your thoughts about this product!"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
