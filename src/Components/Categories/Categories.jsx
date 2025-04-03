@@ -9,6 +9,8 @@ import RecentlyAdded from "../RecentlyAddedSection/RecentlyAdded";
 import FooterIndex from "../Footer/FooterIndex"
 import LogoBrands from "../LogoBannar/LogoBrands"
 import AllCat from "../AllCategories/AllCat";
+import Filters from "./Filters";
+import ProductSectionWithGridSwitcher from "./ProductSectionWithGridSwitcher";
 export default function Categories() {
     return (
       <>
@@ -23,6 +25,9 @@ export default function Categories() {
                 <CatBox />
               </div>
               <div className="my-5">
+                <Filters />
+              </div>
+              <div className="my-5">
                 <Banner />
               </div>
               <div className="my-5">
@@ -30,12 +35,17 @@ export default function Categories() {
               </div>
             </div>
             <div className="col-span-3">
-              <RecentlyAdded />
+              <div>
+                <RecentlyAdded />
+              </div>
+              <div>
+                <ProductSectionWithGridSwitcher/>
+              </div>
             </div>
           </div>
         </section>
-        <AllCat/>
-          <LogoBrands/>
+        <AllCat />
+        <LogoBrands />
         <FooterIndex />
       </>
     );
