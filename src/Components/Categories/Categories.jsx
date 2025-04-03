@@ -7,6 +7,8 @@ import LatestProducts from "../ProductInfo/LatestProducts";
 import MegaMenu from "../ProductInfo/MegaMenu"
 import RecentlyAdded from "../RecentlyAddedSection/RecentlyAdded";
 import FooterIndex from "../Footer/FooterIndex"
+import LogoBrands from "../LogoBannar/LogoBrands"
+import AllCat from "../AllCategories/AllCat";
 export default function Categories() {
     return (
       <>
@@ -14,8 +16,8 @@ export default function Categories() {
         <MainNav />
         <MegaMenu />
         <Breadcrumb />
-        <section>
-          <div className="grid grid-cols-1 md:grid-cols-4 w-[85%] mx-auto">
+        <section className="w-[85%] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 ">
             <div className="col-span-1 hidden md:block">
               <div className="my-5">
                 <CatBox />
@@ -32,7 +34,9 @@ export default function Categories() {
             </div>
           </div>
         </section>
-        <FooterIndex/>
+        <AllCat/>
+          <LogoBrands/>
+        <FooterIndex />
       </>
     );
 }
