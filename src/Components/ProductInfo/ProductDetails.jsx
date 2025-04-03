@@ -53,7 +53,7 @@ export default function ProductDetails() {
         <MegaMenu />
         <Breadcrumb />
         <div className="grid grid-cols-1 md:grid-cols-4 w-[85%] mx-auto">
-          <div className="md:col-span-1 hidden md:block pr-10">
+          <div className="col-span-1 hidden md:block pr-10">
             <div className="mb-[50px]">
               <CatBox id={product.id} />
             </div>
@@ -64,7 +64,7 @@ export default function ProductDetails() {
               <LatestProducts />
             </div>
           </div>
-          <div className="md:col-span-3 w-full">
+          <div className="col-span-3 w-full">
             <ProductBox product={product} key={product.id} />
             <Taps/>
             <RecentlyAdded />

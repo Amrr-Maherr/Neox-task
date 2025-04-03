@@ -32,11 +32,23 @@ export default function CatBox({id}) {
             )}
           </li>
           <li className="py-3 px-3 border-b-2">
-            TV & Audio <span className="text-gray-300 font-light">({id})</span>
+            TV & Audio <span className="text-gray-300 font-light">({id || 22})</span>
+          </li>
+          <li className="py-3 px-3 ">
+            TV & Audio <span className="text-gray-300 font-light">({id || 22})</span>
+          </li>
+          <li className="py-3 px-3 ">
+            TV & Audio <span className="text-gray-300 font-light">({id || 22})</span>
+          </li>
+          <li className="py-3 px-3 ">
+            TV & Audio <span className="text-gray-300 font-light">({id || 22})</span>
+          </li>
+          <li className="py-3 px-3">
+            TV & Audio <span className="text-gray-300 font-light">({id || 22})</span>
           </li>
           <li className="py-3 px-10 font-bold">
             Audio Speakers{" "}
-            <span className="text-gray-300 font-light">({id})</span>
+            <span className="text-gray-300 font-light">({id || 22})</span>
           </li>
         </ul>
       </div>

@@ -8,12 +8,14 @@ import Description from './Components/ProductInfo/Description';
 import Specification from './Components/ProductInfo/Specification';
 import Reviews from './Components/ProductInfo/Reviews';
 import MoreProducts from './Components/ProductInfo/MoreProducts';
+import Categories from './Components/Categories/Categories';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Categories" element={<Categories />} />
         <Route path="/product/:id" element={<ProductDetails />}>
           <Route path="Accessories" element={<Accessories />} />
           <Route path="Description" element={<Description />} />
