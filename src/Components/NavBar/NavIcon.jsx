@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux"; // Import useDispatch and useSelector
 import { removeItemWithToast } from "../../Redux/products/cartSlice"; // Import removeItemWithToast action
+import { Link } from "react-router-dom";
 
 function NavIcon() {
   const dispatch = useDispatch();
@@ -33,7 +34,12 @@ function NavIcon() {
           icon={faHeart}
           className="text-xl text-red-500 p-2 cursor-pointer"
         />
-        <FontAwesomeIcon icon={faUser} className="text-xl p-2 cursor-pointer" />
+        <Link to="/account">
+          <FontAwesomeIcon
+            icon={faUser}
+            className="text-xl p-2 cursor-pointer"
+          />
+        </Link>
         <div className="relative">
           <FontAwesomeIcon
             data-drawer-target="drawer-backdrop"

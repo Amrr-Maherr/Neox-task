@@ -9,6 +9,8 @@ import Specification from './Components/ProductInfo/Specification';
 import Reviews from './Components/ProductInfo/Reviews';
 import MoreProducts from './Components/ProductInfo/MoreProducts';
 import Categories from './Components/Categories/Categories';
+import Account from './Components/Authentication/Account';
+import Reset from './Components/ResetPassword/Reset';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Categories" element={<Categories />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/reset-password" element={<Reset />} />
         <Route path="/product/:id" element={<ProductDetails />}>
           <Route path="Accessories" element={<Accessories />} />
           <Route path="Description" element={<Description />} />
